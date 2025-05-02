@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Ace JEE: A Comprehensive Guide | SidBlogs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body><script>
+    (function() {
+        const WEBSITE_ID = "13162";
+
+        // css
+        const style = document.createElement("style");
+        style.innerHTML = "#comments {display:none;} .comment-link {visibility: hidden;}";
+        document.head.appendChild(style);
+
+        // comments
+        const wrap = document.getElementById("comments");
+        if (wrap) {
+            const script = document.createElement('script');
+            script.type = "module";
+            script.src = "https://talk.hyvor.com/embed/embed.js";
+            document.body.appendChild(script);
+
+            const el = document.createElement("hyvor-talk-comments");
+            el.setAttribute("website-id", WEBSITE_ID);
+            wrap.appendChild(el);
+            wrap.style.display = 'block';
+        }
+
+        // comment counts
+        const posts = document.querySelectorAll(".post");
+        let found = false;
+
+        for (let i = 0; i < posts.length; i++) {
+            const post = posts[i];
+            const link = post.querySelector(".comment-link");
+            if (!link)
+                continue;
+
+            const el = document.createElement("hyvor-talk-comment-count");
+            el.setAttribute("page-id", link.href);
+            link.innerHTML = "";
+            link.appendChild(el);
+
+            found = true;
+        }
+
+        if (found) {
+            const style2 = document.createElement("style");
+            style2.innerHTML = ".comment-link {visibility: visible!important;}";
+            document.head.appendChild(style);
+
+            const script = document.createElement('script');
+            script.src = "https://talk.hyvor.com/embed/comment-counts.js";
+            document.body.appendChild(script);
+
+            script.onload = function() {
+                hyvorTalkCommentCounts.load({
+                    "website-id": WEBSITE_ID
+                });
+            }
+        }
+    })()
+</script>
+    <header>
+        <div class="container">
+            <h1>SidBlogs</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="blog-post">
+            <h2>How to Ace JEE: A Comprehensive Guide</h2>
+            <p><em>Published on May 2, 2025</em></p>
+            <div class="content">
+                <p>Your detailed guide on acing the JEE examination...</p>
+                <!-- More content goes here -->
+            </div>
+
+            <!-- Hyvor Talk Comment System -->
+            <div id="hyvor-talk-view"></div>
+            <script type="text/javascript">
+              (function() {
+                var script = document.createElement('script');
+                script.src = "https://talk.hyvor.com/embed.js";
+                script.async = true;
+                document.getElementsByTagName('head')[0].appendChild(script);
+              })();
+            </script>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SidBlogs</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
